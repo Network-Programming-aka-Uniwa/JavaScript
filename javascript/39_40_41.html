@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cookies</title>
+</head>
+<script type ="text/javascript" >
+function setCookie(name, value, expireDays, path) {
+var expireDate = new Date
+expireDate.setDate(expireDate.getDate()+expireDays)
+document.cookie= name + "=" + escape(value) + ";" +
+" expires=" + expireDate.toGMTString() +  ";" +
+" path=" + path
+}
+
+function getCookie(cname) {
+if (document.cookie.length>0) {
+start=document.cookie.indexOf(cname + "=")
+if (start > -1) { 
+start=  start + cname.length+1 
+end=document.cookie.indexOf(";",start)
+if (end== -1) {
+end = document.cookie.length
+}
+return unescape(document.cookie.substring(start,end))
+} 
+}
+return ""
+}
+
+function checkIT() {
+var x = getCookie("user")
+if (x== null || x == "") {
+alert("It is your first visit")
+setCookie("user","1","1","/")
+}
+else {
+alert("you have visit : " + x)
+setCookie("user",String(Number(x) + 1),"1","/")
+}
+}
+</script>
+<body onload="checkIT()">
+</body>
+</html>

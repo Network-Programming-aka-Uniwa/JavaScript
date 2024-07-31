@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+function showBrowserInfo(){
+var browser=navigator.appName
+var version=parseFloat(navigator.appVersion)
+
+if ((browser == "Microsoft Internet Explorer") && (version >= 4)) {
+  alert("Your browser is good enough!")
+}
+else {
+  alert("It's time to upgrade your browser!")
+ }
+}
+</script>
+</head>
+<body onload="showBrowserInfo()">
+</body>
+</html> 

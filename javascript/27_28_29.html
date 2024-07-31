@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+<!--
+buttonup = new Image; 
+buttonup.src = "buttonUp.gif";
+buttondown = new Image; 
+buttondown.src = "buttonDown.gif";
+
+function MouseOverRoutine(ButtonName) {
+if (ButtonName=="TheButton")  {
+document.TheButton.src = buttondown.src;
+} }
+function MouseOutRoutine(ButtonName) {
+if (ButtonName=="TheButton") {
+document.TheButton.src = buttonup.src;
+} }
+//-->
+</script>
+</head>
+<body>
+<a href="http://www.ekdd.gr" 
+onmouseOver="MouseOverRoutine('TheButton')" 
+onmouseOut="MouseOutRoutine('TheButton')"><img src="buttonUp.gif" 
+name="TheButton" border=0></a> 
+<br>
+</body>
+</html>

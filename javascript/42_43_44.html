@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><title>Form Validation</title>
+<script type ="text/javascript" >
+function isValid(field, message) {
+if(field.value == "") {
+alert(message)
+return (false)
+}
+return (true)
+}
+function isNumeric(field, message) {
+if((field.value == "") || isNaN(Number(field.value))) {
+alert(message)
+return (false)
+}
+return (true)
+}
+
+function isEmail(field, message) {
+if((field.value == "") || field.value.indexOf("@") < 0) {
+alert(message)
+return (false)
+}
+return (true)
+}
+function isFormValid() {
+if (isValid(document.data.uname, "You must fill the Name field.") && 
+isValid(document.data.usurname, "You must fill the Surname field.")) {
+if( isNumeric(document.data.uage, "The age must be a numeric value.") &&  
+    isEmail(document.data.uemail, "The email is not valid."))
+return true;
+} 
+return false; 
+}
+</script>
+
+</head>
+<body>
+<form name="data" method="post" action="test.jsp" onsubmit="return isFormValid()">
+<table>
+<tr><td>Όνομα</td><td><input type="text" name="uname" /></td></tr>
+<tr><td>Επώνυμο</td><td><input type="text" name="usurname" /></td></tr>
+<tr><td>Ηλικία</td><td><input type="text" name="uage" /></td></tr>
+<tr><td>Email</td><td><input type="text" name="uemail" /></td></tr>
+<tr><td colspan="2"><input type="submit" value="Αποστολή" /></td></tr>
+</table>
+</form>
+</body>
+</html>

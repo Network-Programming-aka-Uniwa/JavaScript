@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+function CalcSum(a,b) {
+sum = Number(a) + Number(b)
+return sum
+}
+function Calculate() {
+x = document.getElementById('txt1').value
+y = document.getElementById('txt2').value
+if(x == "" || y == "") {
+alert("Error")
+}
+else {
+sum = CalcSum(x, y )
+document.getElementById('res').value = sum
+} }
+</script>
+</head>
+<body>
+<form>
+<table>
+<tr><td>Πρώτος αριθμός</td><td><input type="text" id="txt1"></td></tr>
+<tr><td>Δευτερος αριθμός</td><td><input type="text" id="txt2"></td></tr>
+<tr><td>Αποτέλεσμα</td><td><input type="text" id="res"></td></tr>
+<tr><td colspan="2" align ="center" >
+<input type="button" value="Calculate...." onClick="Calculate()">
+</td></tr>
+</table>
+</form>
+</body>
+</html>

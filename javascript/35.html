@@ -1,0 +1,18 @@
+<HTML> <HEAD><TITLE>A Simple Menu</TITLE>
+<script type="text/javascript"> 
+function doSomething()        {
+document.title = document.good.guest.value
+alert("Name: " + document.forms[0].elements[0].name)
+alert("Value: " + document.forms[0].elements[0].value)
+alert(navigator.userAgent)
+if(window.confirm("Do you like a redirection to EKDDA web page?")) {
+window.location = "http://www.ekdd.gr"
+}
+}
+</script>
+</HEAD>
+<BODY>
+<form name="good">
+<input type="text" name="guest" />
+<input type="button" value="Press me" onclick ="doSomething()" />
+</form> </body> </html>
